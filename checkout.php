@@ -27,4 +27,4 @@ while ($i > 0) {
 
 
 ?>
-<a href="http://192.168.1.126/salesselector/equipment-checkout.php">Go Back</a>
+<a href="http://localhost/salesselector/equipment-checkout.php">Go Back</a>

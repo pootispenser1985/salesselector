@@ -1,0 +1,14 @@
+body {
+
+}
+
+ul {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+li {
+  margin-left: 2em;
+  display: inline;
+}

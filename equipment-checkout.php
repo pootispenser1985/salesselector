@@ -3,24 +3,32 @@
 		<link rel="stylesheet" type="text/css" href="main.css?v=04012018b">
 	</head>
 	<body>
+		<?php include 'navbar.php'; ?>
 		Who are you?
 		<form action="checkout.php" method="POST">
 			<?php
 
-			include '/etc/phpstuff/salesselector.php';
+				include '/etc/phpstuff/salesselector.php';
 
-			$db = new mysqli('127.0.0.1', $sqlUser, $sqlPass,
-'thrashca_salesselector');
-			$query = "SELECT * FROM people;";
-			$result = $db->query($query);
+				$db = new mysqli('127.0.0.1', $sqlUser, $sqlPass,
+	'thrashca_salesselector');
+				$query = "SELECT * FROM people;";
+				$result = $db->query($query);
 
-			while (2 < 5) {
-				$line = $result->fetch_array();
-				if ($line == NULL) {break;}
-				echo '<p><input type="radio" name="who"
-value="'.$line['name'].'">';
-				echo ' '.$line['name']."</p>";
-			}
+				/*while (2 < 5) {
+					$line = $result->fetch_array();
+					if ($line == NULL) {break;}
+					echo '<p><input type="radio" name="who"
+	value="'.$line['name'].'">';
+					echo ' '.$line['name']."</p>";
+				}*/
+				echo '<select name="who">';
+				while (2 < 5) {
+					$line = $result->fetch_array();
+					if ($line == NULL) {break;}
+					echo '<option value="'.$line['name'].'">'.$line['name'].'</option>';
+				}
+				echo "</select>";
 			?>
 		<p>And what are you taking with you?</p>
 		<table style="width:80%; border: 1px solid black;">
